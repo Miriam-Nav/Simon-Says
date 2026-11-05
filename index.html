@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Simón Dice</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header>
+    <h1>Juego Simón Dice</h1>
+    <p>Memoriza la secuencia de colores de la máquina y repítela en el mismo orden.</p>
+  </header>
+
+  <main>
+    <div class="panel-control">
+      <span id="texto-nivel">Nivel: <strong id="nivel">1</strong></span>
+      <button id="btn-start">Comenzar Juego</button>
+    </div>
+
+    <!-- Tablero -->
+    <div id="tablero" class="tablero">
+      <button class="boton-color rojo" data-color="rojo"></button>
+      <button class="boton-color amarillo" data-color="amarillo"></button>
+      <button class="boton-color verde" data-color="verde"></button>
+      <button class="boton-color azul" data-color="azul"></button>
+
+      <!-- Colores extra para niveles 15 y 20 -->
+      <button class="boton-color naranja oculto" data-color="naranja"></button>
+      <button class="boton-color morado oculto" data-color="morado"></button>
+      <button class="boton-color cian oculto" data-color="cian"></button>
+      <button class="boton-color rosa oculto" data-color="rosa"></button>
+    </div>
+
+    <!-- Clasificación -->
+    <section id="seccion-ranking">
+      <h2>Ranking de Puntuaciones</h2>
+      <ul id="lista-ranking"></ul>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+
+</html>

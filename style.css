@@ -1,0 +1,135 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+    text-align: center;
+}
+
+header p {}
+
+.panel-control {
+    margin: 20px 0;
+    font-size: 1.2rem;
+}
+
+#btn-start {
+    padding: 10px 20px;
+    font-size: 1rem;
+    background-color: #1259f3;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    margin-left: 15px;
+    font-weight: bold;
+}
+
+#btn-start:disabled {
+    background-color: #7f8c8d;
+    cursor: not-allowed;
+}
+
+/* Tablero en cuadrícula */
+.tablero {
+    display: grid;
+    grid-template-columns: repeat(2, 130px);
+    gap: 15px;
+    justify-content: center;
+}
+
+/* Modificaciones de cuadrícula cuando se desbloqueen más colores */
+.tablero.seis-colores {
+    grid-template-columns: repeat(3, 130px);
+}
+
+.tablero.ocho-colores {
+    grid-template-columns: repeat(4, 130px);
+}
+
+/* Estructura común para todos los botones */
+.boton-color {
+    width: 130px;
+    height: 130px;
+    border-radius: 15px;
+    border: none;
+    cursor: pointer;
+    opacity: 0.5;
+    /* Estado apagado o en reposo */
+}
+
+/* Clase que aplicará JS cuando la máquina o el usuario pulsen un color */
+.boton-color.activo {
+    opacity: 1;
+    transform: scale(1.05);
+    box-shadow: 0 0 10px rgb(185, 169, 169);
+}
+
+/* Colores */
+.rojo {
+    background-color: #e74c3c;
+}
+
+.amarillo {
+    background-color: #f1c40f;
+}
+
+.verde {
+    background-color: #2ecc71;
+}
+
+.azul {
+    background-color: #3498db;
+}
+
+.naranja {
+    background-color: #e67e22;
+}
+
+.morado {
+    background-color: #9b59b6;
+}
+
+.cian {
+    background-color: #00cec9;
+}
+
+.rosa {
+    background-color: #fd79a8;
+}
+
+/* Esconder botones no disponibles */
+.oculto {
+    display: none;
+}
+
+/* Pantalla de error */
+body.error {
+    background-color: #c0392b;
+}
+
+/* Sección de ranking */
+#seccion-ranking {
+    margin-top: 40px;
+    background: rgba(0, 0, 0, 0.25);
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 420px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#lista-ranking {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: left;
+}
+
+#lista-ranking li {
+    padding: 10px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    justify-content: space-between;
+}
