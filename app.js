@@ -47,19 +47,15 @@ function iniciarPartida() {
     jugarRonda();
 }
 
-/////////////////////////////////////
-// AJUSTAR VALORES DE PRUEBA
-/////////////////////////////////////
-
 // CONTROL DE DIFICULTAD PROGRESIVA
 function actualizarDificultad() {
     // A partir de la ronda 10 se acelera la velocidad 
-    if (nivel >= 2) {
+    if (nivel >= 10) {
         velocidad = 450;
     }
 
     // A partir de la ronda 15 se añaden 2 colores
-    if (nivel >= 4 && !coloresDisponibles.includes("naranja")) {
+    if (nivel >= 15 && !coloresDisponibles.includes("naranja")) {
         coloresDisponibles.push("naranja", "morado");
         document.querySelector(".naranja").classList.remove("oculto");
         document.querySelector(".morado").classList.remove("oculto");
@@ -67,7 +63,7 @@ function actualizarDificultad() {
     }
 
     // A partir de la ronda 20 se añaden otros 2 colores
-    if (nivel >= 6 && !coloresDisponibles.includes("cian")) {
+    if (nivel >= 20 && !coloresDisponibles.includes("cian")) {
         coloresDisponibles.push("cian", "rosa");
         document.querySelector(".cian").classList.remove("oculto");
         document.querySelector(".rosa").classList.remove("oculto");
@@ -186,7 +182,7 @@ async function finalizarJuego() {
     guardarEnLocalStorage(resultado);
 
     // 2. Enviamos a la base de datos de MockAPI
-    // await enviarAMockAPI(resultado);
+    await enviarAMockAPI(resultado);
 
     // Volver a habilitar el botón de Start
     btnStart.disabled = false;
